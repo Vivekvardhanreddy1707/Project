@@ -3,6 +3,32 @@ body {
   background: #0c0b09;
   color: #fff;
 }
+.popup.signin-background {
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
+.popup.signin-background input {
+  background-color: black;
+  color: white;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Style for the chrome yellow button */
+.chrome-yellow-button {
+  background-color: #cda45e; 
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 20px auto; 
+  display: block; 
+}
+
+
 .yellow-text {
   color: #cda45e;
 }
@@ -188,6 +214,7 @@ body {
   margin: 20px auto; 
   display: block; 
 }
+
 .php-email-form input[type='text'],
 .php-email-form input[type='email'],
 .php-email-form input[type='tel'],
@@ -233,6 +260,41 @@ body {
 .php-email-form .mb-3 {
   margin-bottom: 15px;
 }
+.php-email-form table {
+  background: #000;
+}
+
+.php-email-form th, .php-email-form td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  color: #fff;
+  background: #000;
+}
+.php-email-form th {
+  background: #000;
+}
+.php-email-form .black-table {
+  background-color: black;
+  color: white;
+}
+
+
+.php-email-form .black-table th,
+.php-email-form .black-table td {
+  background: black; /* Override cell background color */
+  color: white;
+}
+
+
+.php-email-form .black-table input[type='number'] {
+  background-color: black;
+  color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  width: 80px;
+}
+
 .gallery {
   background-color: black;
   padding: 20px;
@@ -417,4 +479,5 @@ body {
   opacity: 0;
   animation: fadeUp 1s 0.5s forwards;
 }
+
 
