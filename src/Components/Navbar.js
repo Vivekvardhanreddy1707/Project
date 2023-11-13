@@ -1,6 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 const Navbar = () => {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -15,26 +16,23 @@ const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-0">
-      <div className="container-fluid p-0">
+      <div className="container-fluid">
         <a className="navbar-brand" href="#">
           <h3 className="navbar-text text-white m-0 p-0">Plates&Pleasure</h3>
         </a>
         <button
           className="navbar-toggler"
           type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div
-          className="collapse navbar-collapse justify-content-lg-between p-0"
-          id="navbarNav"
-        >
-          <ul className="navbar-nav">
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav me-auto"> {/* Utilize 'me-auto' to push the button to the right */}
             <li className="nav-item" onClick={() => scrollToSection("home")}>
               <a className="nav-link text-white" href="#">
                 Home
@@ -66,7 +64,7 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          <ul className="navbar-nav m-0 p-0">
+          <ul className="navbar-nav">
             <li className="nav-item">
               <button
                 id="signin-button"
