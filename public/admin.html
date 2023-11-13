@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: black;
+            color: white;
+        }
+
+        .sidebar {
+            flex: 1; /* Occupies 75% of the page width */
+            background-color: #eeac5c;
+            color: #fff;
+            padding: 20px;
+            min-width: 200px; /* Set a minimum width for the sidebar */
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .content {
+            flex: 3; /* Occupies 25% of the page width */
+            padding: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header button {
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .dashboard-card {
+            width: 25%;
+            margin: 0 10px 20px 0;
+            padding: 20px;
+            background-color: rgb(239, 209, 149);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        .dashboard-card h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-card p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: beige;
+        }
+        header {
+            background-color: rgb(234, 188, 89);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-style: italic;
+        }
+        h1 {
+            margin: 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            color: beige;
+        }
+        table, th, td {
+            border: 1px solid beige;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;            
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        select {
+            padding: 5px;
+            color: beige;
+            background-color: black;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: black;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        .staff {
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #f1dbb5;
+            margin: 5px 0;
+            background-color: #eee;
+            color: black;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#" onclick="loadContent('A')">Dashboard</a></li>
+            <li><a href="#" onclick="loadContent('B')">Reservations</a></li>
+            <li><a href="#" onclick="loadContent('D')">Staff Manegement</a></li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <h1>Welcome to Plates&Pleasure</h1>
+        <p>Administration Page</p>
+    </div>
+
+    <script>
+        function loadContent(item) {
+            const contentDiv = document.getElementById('content');
+            switch (item) {
+                case 'A':
+                    contentDiv.innerHTML = `
+                        <h1>Restaurant Insights</h1>
+                        <p></p>
+                        <main class="main-content">
+            <section class="dashboard">
+                <div class="dashboard-card">
+                    <h3>Sales</h3>
+                    <p>1.3 M</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Orders</h3>
+                    <p>2490</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Customers</h3>
+                    <p>1560</p>
+                </div>
+            </section>
+
+            </main>
+                    `;
+                    break;
+                case 'B':
+                    contentDiv.innerHTML = `
+                        <h1>Table Bookings</h1>
+                        <p></p>
+                        <label for="dateFilter">Select Date:</label>
+    <select id="dateFilter">
+        <option value="all">All</option>
+        <option value="today">Today</option>
+        <option value="tomorrow">Tomorrow</option>
+        <option value="rest">Rest</option>
+    </select>
+
+    <table id="bookingTable">
+        <tr>
+            <th>Booking ID</th>
+            <th>Customer Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>No.of People</th>
+            <th>Table no</th>
+        </tr>
+        <tr>
+            <td>112</td>
+            <td>John Doe</td>
+            <td>2023-11-09</td>
+            <td>18:00</td>
+            <td>4</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>213</td>
+            <td>Samyuktha</td>
+            <td>2023-11-10</td>
+            <td>13:30</td>
+            <td>2</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>322</td>
+            <td>Karthik Das</td>
+            <td>2023-11-10</td>
+            <td>20:30</td>
+            <td>3</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>316</td>
+            <td>Venkat</td>
+            <td>2023-11-11</td>
+            <td>14:00</td>
+            <td>7</td>
+            <td>12</td>
+        </tr>
+
+        <!-- Add more rows for additional bookings with different dates -->
+    </table>
+
+                    `;
+                    break;
+                case 'D':
+                    contentDiv.innerHTML = `
+                        <h1>Staff details</h1>
+                        <p></p>
+                        <div class="container">
+        <h1>Staff List</h1>
+        <div id="chefSection">
+            <h2>Chefs</h2>
+            <ul id="chefList">
+                <li class="staff" data-role="Chef">Sanjay Thumma</li>
+                <li class="staff" data-role="Chef">Aruna Vijay</li>
+                <li class="staff" data-role="Chef">Hari Nayak</li>
+            </ul>
+        </div>
+        <div id="managerSection">
+            <h2>Managers</h2>
+            <ul id="managerList">
+                <li class="staff" data-role="Manager">Manager Krishnan</li>
+                <li class="staff" data-role="Manager">Manager Aaradhya</li>
+            </ul>
+        </div>
+        <div id="staffSection">
+            <h2>Other Staff</h2>
+            <ul id="staffList">
+                <li class="staff" data-role="Staff">Staff Meghana</li>
+                <li class="staff" data-role="Staff">Staff Srihan</li>
+                <li class="staff" data-role="Staff">Staff Roshan</li>
+                <li class="staff" data-role="Staff">Staff Dakshayini</li>
+            </ul>
+        </div>
+        <div id="staffDetails">
+        </div>
+    </div>
+
+                    `;
+                    break;
+                default:
+                    contentDiv.innerHTML = `
+                        <h1>Welcome to the Web App</h1>
+                        <p>Select an item from the sidebar to view details.</p>
+                    `;
+            }
+        }
+    </script>
+</body>
+</html>
+

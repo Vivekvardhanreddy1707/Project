@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plates&Pleasure</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      h1 {
+        color: white;
+      }
+      .popup.signin-background {
+        background-color: black;
+        color: white;
+        padding: 20px;
+        display: flex; /* Added */
+        align-items: center; /* Added */
+        justify-content: center; /* Added */
+      }
+
+      .popup.signin-background .signin-form {
+        width: 300px; /* Adjust the width as needed */
+      }
+
+      .popup.signin-background label {
+        display: block;
+        margin-bottom: 8px;
+        color: white;
+      }
+
+      .popup.signin-background input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: black;
+        color: white;
+      }
+
+      /* Style for the chrome yellow button */
+      .chrome-yellow-button {
+        background-color: #cda45e;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 20px auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="navbar-text text-white m-0 p-0">Plates&Pleasure</h1>
+    <div id="signin-popup" class="popup signin-background">
+      <div class="signin-form">
+        <h2>Sign in</h2>
+        <form id="signin-form" onsubmit="handleSignInSubmit(event)">
+          <label for="signin-name">Username</label>
+          <input type="text" id="signin-name" placeholder="Name" required />
+          <label for="signin-password">Password</label>
+          <input
+            type="password"
+            id="signin-password"
+            placeholder="Password"
+            required
+          />
+          <div class="complete-signup-button">
+            <button type="submit" class="chrome-yellow-button">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function scrollToSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      function showSignInForm() {
+        var signInPopup = document.getElementById("signin-popup");
+        signInPopup.style.display = "block";
+      }
+
+      function handleSignInSubmit(event) {
+        event.preventDefault();
+        var username = document.getElementById("signin-name").value;
+        var password = document.getElementById("signin-password").value;
+
+        // Example: Check if username and password are correct (replace with your logic)
+        if (username === "srujan" && password === "srujan") {
+          // Handle successful login
+          window.open("/admin.html", "_blank");
+        }
+      }
+    </script>
+  </body>
+</html>
