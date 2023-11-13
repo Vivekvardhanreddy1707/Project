@@ -1,4 +1,6 @@
+// App.js
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbar = ({ scrollToSection, handleSignupClick }) => {
   return (
@@ -10,8 +12,8 @@ const Navbar = ({ scrollToSection, handleSignupClick }) => {
         <button
           className="navbar-toggler"
           type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
@@ -20,7 +22,7 @@ const Navbar = ({ scrollToSection, handleSignupClick }) => {
         </button>
         <div className="collapse navbar-collapse justify-content-lg-between p-0" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item" onClick={() => scrollToSection('home')}>
+          <li className="nav-item" onClick={() => scrollToSection('home')}>
               <a className="nav-link text-white" href="#">Home</a>
             </li>
             <li className="nav-item" onClick={() => scrollToSection('about')}>
@@ -72,12 +74,10 @@ const App = () => {
           <div className="signin-form">
             <h2>Sign in</h2>
             <form>
-              <label htmlFor="signin-name">Name</label>
-              <input type="text" id="signin-name" placeholder="Name" required />
-              <label htmlFor="signin-email">Email</label>
-              <input type="email" id="signin-email" placeholder="Email" required />
-              <label htmlFor="signin-phone">Phone Number</label>
-              <input type="tel" id="signin-phone" placeholder="Phone Number" required />
+              <label htmlFor="signin-name">User Name</label>
+              <input type="text" id="signin-name" placeholder="UserName" required />
+              <label htmlFor="signin-password">Password</label>
+              <input type="password" id="signin-password" placeholder="password" required />
               <div className="complete-signup-button">
                 <button type="submit" className="chrome-yellow-button">
                   Sign In
